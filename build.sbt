@@ -28,7 +28,7 @@ name := "dinocpu"
 version := "0.5"
 organization := "edu.ucdavis.cs"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.12.12"
 
 crossScalaVersions := Seq("2.12.10", "2.11.12")
 
@@ -39,7 +39,7 @@ resolvers ++= Seq(
 
 // Provide a managed dependency on X if -DXVersion="" is supplied on the command line.
 val defaultVersions = Map(
-  "chisel3" -> "3.2.+",
+  "chisel3" -> "3.4.3",
   "chisel-iotesters" -> "1.3.+"
   )
 
@@ -62,6 +62,7 @@ libraryDependencies += "net.fornwall.jelf" % "jelf" % "0.4.1"
 
 // For visualization, figure out how to move this somewhere else
 libraryDependencies += "org.scala-lang.modules" %% "scala-swing" % "2.1.1"
+
 
 // This sets it up so all tests that end in "Tester" will be run when you run sbt test
 // and all tests that end in "Grader" will run when you run stb Grader / test

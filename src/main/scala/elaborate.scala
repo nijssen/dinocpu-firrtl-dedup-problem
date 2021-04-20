@@ -1,6 +1,8 @@
 // Main entry point for elaboration
 package dinocpu
 
+import chisel3.stage.ChiselStage
+
 /**
  * Simple object with only a main function to run the chisel elaboration.
  * When run, this will output Top.v, Top.fir, and other files.
@@ -13,6 +15,7 @@ object elaborate {
 
     val conf = new CPUConfig()
     conf.cpuType = args(0)
-    chisel3.Driver.execute(args, () => new Top(conf))
+    //chisel3.Driver.execute(args, () => new Top(conf))
+    (new ChiselStage).emitFirrtl(new Top(conf))
   }
 }
